@@ -1,0 +1,26 @@
+# This file lists role dependences that should be installed from Ansible Galaxy
+# See https://galaxy.ansible.com/docs/using/installing.html#installing-multiple-roles-from-a-file
+
+# https://galaxy.ansible.com/geerlingguy/ntp
+- src: geerlingguy.ntp
+
+# https://galaxy.ansible.com/geerlingguy/apache
+- src: geerlingguy.apache
+
+# https://galaxy.ansible.com/geerlingguy/apache-php-fpm
+- src: geerlingguy.apache-php-fpm
+
+# https://galaxy.ansible.com/geerlingguy/mysql
+- src: geerlingguy.mysql
+
+# https://galaxy.ansible.com/geerlingguy/php-versions
+- src: geerlingguy.php-versions
+
+# https://galaxy.ansible.com/geerlingguy/php
+- src: geerlingguy.php
+
+# https://galaxy.ansible.com/geerlingguy/composer
+- src: geerlingguy.composer
+
+# https://galaxy.ansible.com/geerlingguy/redis
+- src: geerlingguy.redis

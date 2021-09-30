@@ -1,0 +1,32 @@
+---
+- name: Set up a dev server for Pimcore 10
+  hosts: webservers
+  vars_files:
+    - vars/set_up.yml
+  become: yes
+
+  pre_tasks:
+
+    - name: Ping the node(s)
+      ansible.builtin.ping:
+
+    - name: Verify locale
+      community.general.locale_gen:
+        name: "{{ locale }}"
+        state: present
+
+    - name: Install software packages
+      ansible.builtin.apt:
+        update_cache: yes
+        name: "{{ packages_present }}"
+        state: present
+
+  roles:
+    - geerlingguy.ntp
+    - geerlingguy.apache
+    - geerlingguy.mysql
+    - geerlingguy.php-versions
+    - geerlingguy.php
+    - geerlingguy.apache-php-fpm
+    - geerlingguy.composer
+    - geerlingguy.redis

@@ -1,0 +1,7 @@
+[webservers]
+your.server.domain
+
+[webservers:vars]
+ansible_user=deckard
+ansible_password=secret
+mysql_root_password=secret

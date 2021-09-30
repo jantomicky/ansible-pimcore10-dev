@@ -1,0 +1,51 @@
+---
+locale: en_US.UTF-8
+packages_present:
+  - sudo
+  - git
+  - curl
+  - unzip
+  - htop
+  - vim
+  - imagemagick
+  - ffmpeg
+  - libreoffice
+
+# https://github.com/geerlingguy/ansible-role-ntp
+ntp_timezone: Europe/Prague
+ntp_manage_config: true
+ntp_area: europe
+ntp_cron_handler_enabled: true
+
+# https://github.com/geerlingguy/ansible-role-apache
+apache_create_vhosts: false
+apache_remove_default_vhost: true
+apache_mods_enabled:
+  - rewrite.load
+  - ssl.load
+  - headers.load
+
+# https://github.com/geerlingguy/ansible-role-php-versions
+php_version: '8.0'
+
+# https://github.com/geerlingguy/ansible-role-php
+php_webserver_daemon: "apache2"
+php_post_max_size: "64M"
+php_date_timezone: "Europe/Prague"
+php_packages_extra:
+  - php8.0-bcmath
+  - php8.0-bz2
+  - php8.0-curl
+  - php8.0-dev
+  - php8.0-gd
+  - php8.0-imagick
+  - php8.0-intl
+  - php8.0-mbstring
+  - php8.0-mysql
+  - php8.0-redis
+  - php8.0-soap
+  - php8.0-xml
+  - php8.0-zip
+
+# https://github.com/geerlingguy/ansible-role-apache-php-fpm
+php_enable_php_fpm: true # https://www.php.net/manual/en/install.fpm.configuration.php
